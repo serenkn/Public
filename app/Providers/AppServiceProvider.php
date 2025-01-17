@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Providers;
+use Illuminate\Pagination\Paginator;
 
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,12 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        Paginator::useBootstrap();
+        // Paginator::useBootstrapFive();    公式ドキュメント
+        //または Paginator::useBootstrapFour();    公式ドキュメント
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
         //
