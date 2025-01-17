@@ -14,13 +14,18 @@
                 <div class='post'>
                     <h2 class='title'>
                         <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
-                    </h2>
+     　                                                                                                                                </h2>
                         <p class='body'>{{ $post->body }}</p>
-                </div>
-            @endforeach
+<form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+    @csrf
+    @method('DELETE')
+    <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
+</form>
+                        @endforeach
         </div>
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+        `form_${id}`
     </body>
 </html>
